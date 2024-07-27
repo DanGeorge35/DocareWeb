@@ -25,10 +25,19 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd docare/staging/DocareWeb
+            # Navigate to the project directory
+            cd docare/main/DocareWeb
             git pull
-            echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-            echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S apt-get install -y nodejs
+            # Install nvm (Node Version Manager)
+            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            # Install Node.js and npm using nvm
+            nvm install node
+            # Install project dependencies and build the project
             npm install
             npm run build
-            cp -rf ./build/* ~/public_html/docarestaging
+            # Ensure the target directory exists
+            mkdir -p ~/public_html/docaremain
+            # Copy the build files to the target directory
+            cp -rf ./build/* ~/public_html/docaremain
