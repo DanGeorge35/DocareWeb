@@ -24,35 +24,16 @@ class Navs extends Component {
                     Home
                   </NavLink>
                 </li>
-
-                <li className="nav-item">
-                  <NavLink
-                    to="/reservation"
-                    className="nav-link  "
-                    aria-current="page"
-                  >
-                    About
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                    to="/contact"
-                    className="nav-link  "
-                    aria-current="page"
-                  >
-                    Contact
-                  </NavLink>
-                </li>
               </ul>
             </div>
-            <NavLink
+            {/* <NavLink
               to="/signin"
               aria-current="page"
               className="btn btn-warning  px-4 pe-4 py-2  d-flex  d-md-none d-none  d-lg-block"
               style={{ minWidth: "150px" }}
             >
               Book an Appointment
-            </NavLink>
+            </NavLink> */}
           </div>
         </nav>
       </div>
