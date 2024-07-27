@@ -1,15 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Sacramento&family=Quicksand:wght@300;400;600;700&family=Libre+Baskerville:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,700;1,700&family=Dancing+Script:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap");
-/*
-font-family: "Cormorant Garamond", serif;
-font-family: "Dancing Script", cursive
-font-family: "Nanum Myeongjo", serif;
 
-h4{font-family: 'Libre Baskerville', sans-serif;font-size: 24px;font-weight: 400;}
-
-h5{font-family: 'Raleway', sans-serif;font-size: 18px;font-weight: 500;
-*/
-
-/* Add any additional custom styles here */
 .loader {
   position: fixed;
   left: 0px;
@@ -28,33 +18,16 @@ h5{font-family: 'Raleway', sans-serif;font-size: 18px;font-weight: 500;
   display: none;
 }
 
-.tag {
-  background-color: #968145;
-  padding: 0px 20px;
-  border-radius: 50px;
-}
-.form-control {
-  padding: 10px 15px;
-  background-color: #fefefe00;
-  border: 2px solid #adadad;
-  margin-bottom: 35px;
-  margin-top: 10px;
-  font-size: 18px;
-}
-
 .form-control:focus {
   border-color: #fbca0e;
   background-color: #fefefe00;
-}
-
-.invesmentform .form-control {
-  color: white !important;
 }
 
 select option {
   background-color: #fff !important;
   color: #333;
 }
+
 .btn {
   padding: 12px;
 }
@@ -80,51 +53,42 @@ select option {
   font-family: "Libre Baskerville", sans-serif;
 }
 
-.nav-link {
-  color: white;
-  font-weight: 400;
-  font-size: 18px;
-  font-family: "Quicksand";
-  transition: ease;
-  transition-delay: 1s;
-  transition-timing-function: linear;
-  padding: 10px 15px !important;
+.SideContent > div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(15px); /* Adjust the blur radius as needed */
+  z-index: -1; /* Place the blurred element behind the text */
 }
+
+.SideContent .nav-link {
+  color: black;
+  margin-bottom: 5px;
+  font-size: 25px;
+}
+.SideMenu .SideContent {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #fffefeed;
+  height: 100%;
+  width: 70%;
+}
+.SideContent > div {
+  background-color: #ffffffde;
+  padding-left: 10px;
+  padding-right: 25px;
+  height: 100%;
+}
+
+
 .text-primary-color {
   color: #f7c400 !important;
 }
-.nav-link.active,
-.nav-link:hover,
-.nav-link:focus {
-  color: #ed9c40 !important;
-  font-weight: 700;
-  font-size: 18px;
-}
 
-.navbar-nav .nav-link.show {
-  color: #ed9c40 !important;
-}
-.navbar-toggler {
-  color: #fbca0e;
-}
-.navbar-toggler span {
-  font-size: 42px;
-}
-.SideMenu {
-  width: 100vw;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 3000 !important;
-}
-
-.SideMenu .fadeCover {
-  background-color: #000000b0;
-  height: 100%;
-  z-index: 1;
-}
 .indicators {
   position: absolute;
   width: 100%;
@@ -148,20 +112,7 @@ select option {
   box-shadow: 0px 0px 10px #ddd !important;
 }
 
-.SideMenu .SideContent {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  background-color: #fffefeed;
-  height: 100%;
-  width: 70%;
-}
-.SideContent > div {
-  background-color: #ffffffde;
-  padding-left: 10px;
-  padding-right: 25px;
-  height: 100%;
-}
+
 .menu {
   display: block;
 }
@@ -207,22 +158,7 @@ select option {
   background-color: #ddd;
 }
 
-.SideContent > div::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  filter: blur(15px); /* Adjust the blur radius as needed */
-  z-index: -1; /* Place the blurred element behind the text */
-}
 
-.SideContent .nav-link {
-  color: black;
-  margin-bottom: 5px;
-  font-size: 25px;
-}
 .react-slideshow-container .nav svg {
   width: 15px;
   height: 15px;
@@ -306,59 +242,9 @@ select option {
   border-top: 10px solid black;
 }
 
-.bottomFooter {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  border-top: 1px solid #4c3d01;
-  padding: 15px 20px;
-  background-color: #01202ef9;
-  text-align: center;
-  color: white;
-}
 
-.footer .container-fluid {
-  background-color: #003c55f9;
-}
-.footer .col-lg-6 {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  background-color: #003a51f9;
-  padding-right: 100px;
-  padding-left: 100px;
-}
 
-.footer .col-lg-2 {
-  padding-top: 100px;
-  padding-bottom: 100px;
-  color: #cecaca;
-  font-size: 14px;
-}
 
-.footerHead {
-  display: block;
-  padding: 5px;
-  margin-bottom: 20px;
-  color: #968145;
-  font-weight: 700;
-  font-size: 15px;
-}
-.footerLink {
-  margin-top: 15px;
-  display: block;
-  padding: 5px;
-  color: #ddd;
-}
-
-.cHeader {
-  color: #ddd;
-  display: block;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.footerIcon {
-  margin-right: 10px;
-  color: #fff;
-}
 
 .about-page {
   background-repeat: no-repeat;
@@ -369,271 +255,4 @@ select option {
   height: 450px;
   color: white;
   background-color: rgba(46, 44, 4, 0.656);
-}
-
-.mediumIcon {
-  margin-left: 5px;
-  font-weight: 700;
-  font-size: 16px !important;
-  vertical-align: middle;
-}
-.mediumIcon::after {
-  border: 1px solid white;
-  height: 26px;
-  width: 26px;
-  display: inline-block;
-  position: absolute;
-  margin-left: -21px;
-  border-radius: 100%;
-  content: "";
-}
-/* FOOTER */
-
-/* Small screens (e.g., mobile phones) */
-@media (max-width: 480px) {
-  .react-slideshow-container .nav {
-    display: none;
-  }
-  .each-slide > div {
-    background-size: cover;
-    height: 85vh;
-  }
-
-  .each-slide-child .Slidetop {
-    font-weight: 700;
-    font-size: 30px;
-  }
-  .each-slide-child .Slidetitle {
-    font-size: 45px;
-    line-height: 50px;
-  }
-  .ea-slide-child .Slidedetails {
-    font-size: 15px;
-  }
-  .aboutContent {
-    width: 100%;
-    text-align: justify;
-  }
-  .pane {
-    width: 100%;
-    margin: 0 auto;
-  }
-  .footer .container-fluid {
-    padding-left: 10px;
-  }
-  .footer .col-lg-6 {
-    padding-right: 50px;
-    padding-left: 50px;
-    padding-bottom: 20px;
-  }
-  .footer .col-lg-2 {
-    font-size: 12px !important;
-    padding-left: 5px;
-    padding-right: 0px;
-    padding-bottom: 40px;
-    padding-top: 30px;
-  }
-
-  .each-slide2 > div {
-    height: 30vh;
-  }
-}
-/* Medium screens (e.g., tablets) */
-@media (min-width: 480px) and (max-width: 779px) {
-  .each-slide2 > div {
-    height: 30vh;
-  }
-  .react-slideshow-container .nav {
-    display: none;
-  }
-  .each-slide > div {
-    background-size: cover;
-    height: 85vh;
-  }
-
-  .each-slide-child .Slidetop {
-    padding: 10px 20px;
-    font-weight: 700;
-    font-size: 35px;
-  }
-
-  .each-slide-child .Slidetitle {
-    font-size: 55px;
-    line-height: 50px;
-  }
-  .each-slide-child .Slidedetails {
-    font-size: 18px;
-  }
-  .aboutContent {
-    text-align: justify;
-    width: 80%;
-    margin: 0 auto;
-  }
-  .footer .container-fluid {
-    padding-left: 10px;
-  }
-  .footer .col-lg-6 {
-    padding-left: 50px;
-    padding-bottom: 20px;
-  }
-  .footer .col-lg-2 {
-    font-size: 12px !important;
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-bottom: 40px;
-    padding-top: 30px;
-  }
-}
-@media (min-width: 780px) and (max-width: 1093px) {
-  .each-slide > div {
-    background-size: cover;
-    height: 85vh;
-  }
-
-  .each-slide-child .Slidetop {
-    padding: 10px 20px;
-    font-weight: 700;
-    font-size: 50px;
-  }
-
-  .each-slide-child .Slidetitle {
-    font-size: 50px;
-    line-height: 50px;
-  }
-  .each-slide-child .Slidedetails {
-    font-size: 20px;
-  }
-
-  .aboutContent {
-    width: 70%;
-    margin: 0 auto;
-  }
-
-  .pane {
-    width: 90%;
-    margin: 0 auto;
-  }
-}
-/* 18px screens (e.g., desktops) */
-@media (min-width: 1093px) {
-  .each-slide > div {
-    background-size: cover;
-    height: 99vh;
-  }
-  .each-slide-child .Slidetop {
-    padding: 10px 20px;
-    font-size: 90px;
-  }
-
-  .each-slide-child .Slidetitle {
-    font-size: 100px;
-  }
-  .each-slide-child .Slidedetails {
-    font-size: 20px;
-    width: 70%;
-  }
-
-  .aboutContent {
-    width: 50%;
-    margin: 0 auto;
-  }
-
-  .pane {
-    width: 80%;
-    margin: 0 auto;
-  }
-}
-
-a {
-  text-decoration: none;
-  display: inline-block;
-}
-
-.about {
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right bottom;
-}
-.aboutInfo {
-  min-height: 50vh;
-  text-align: center;
-  background-color: #fff; /*#001119; */
-  padding-bottom: 100px;
-}
-
-.ext3 .aboutContent {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 22px;
-}
-
-.ext2 {
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-}
-.location {
-  background-color: #061117a4 !important; /*#001119; */
-}
-
-.gallery {
-  background-color: #b3751e;
-}
-
-.infoCard:hover {
-  opacity: 0.9;
-  cursor: pointer;
-}
-.bgimg {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.2s ease-in-out;
-  border-radius: 10px;
-}
-
-.bgimg:hover {
-  transform: scale(0.96);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  border: 3px solid #fbca0e;
-  border-radius: 10px;
-}
-
-.Tab .nav-link {
-  color: orange;
-  font-weight: 700;
-  font-size: 20px;
-  background-color: #ebebeb;
-  padding: 15px 30px !important;
-  margin-right: 10px;
-}
-
-.Tab > .nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
-  color: orange;
-  background-color: #212529;
-  padding: 15px 30px !important;
-}
-
-.Tab .tab-content > .active {
-  background-color: #fff;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  padding: 10px;
-}
-
-.Tab .tab-content .tab-pane {
-  overflow-x: auto;
-}
-
-th,
-td {
-  padding: 8px 20px;
-  text-align: left;
-  border: 1px solid #ddd;
-  width: auto !important;
-}
-
-th {
-  background-color: #f2f2f2;
-  border: 1px solid #ddd;
 }
