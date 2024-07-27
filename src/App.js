@@ -7,7 +7,7 @@ import About from "./pages/about";
 function App() {
   let BASEURL = "https://cadencepub.com/production/";
   return (
-    <div>
+    <div className="container p-0">
       <Router>
         <Routes>
           <Route index element={<Home BASEURL={BASEURL} />} />

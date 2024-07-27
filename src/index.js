@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "animate.css";
 
 // Custom Styling
+import "./style/w3.css";
 import "./style/index.scss";
 import "./style/small-screen.scss";
 import "./style/medium-screen.scss";

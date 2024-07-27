@@ -5,15 +5,9 @@ import PropTypes from "prop-types";
 class Navs extends Component {
   render() {
     return (
-      <div className="">
-        <nav
-          className="navbar navbar-expand-lg  text-center border-2 border-warning fixed-top p-1"
-          style={{ backgroundColor: "#ffffff70" }}
-        >
-          <div
-            className="container text-center "
-            style={{ height: "80px", width: "100vw" }}
-          >
+      <div className="Nav">
+        <nav className="navbar navbar-expand-lg  text-center  fixed-top p-1">
+          <div className="container navbar-body text-center ">
             <img src="/logo.png" alt="Cadence" style={{ height: "50px" }} />
 
             <div
