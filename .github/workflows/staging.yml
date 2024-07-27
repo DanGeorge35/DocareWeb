@@ -38,6 +38,6 @@ jobs:
             npm install
             npm run build
             # Ensure the target directory exists
-            mkdir -p ~/public_html/docarestaging
+            mkdir -p ~/public_html/docarestage
             # Copy the build files to the target directory
-            cp -rf ./build/* ~/public_html/docarestaging
+            cp -rf ./build/* ~/public_html/docarestage
