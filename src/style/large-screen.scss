@@ -1,0 +1,30 @@
+
+/* 18px screens (e.g., desktops) */
+@media (min-width: 1093px) {
+  .each-slide > div {
+    background-size: cover;
+    height: 99vh;
+  }
+  .each-slide-child .Slidetop {
+    padding: 10px 20px;
+    font-size: 90px;
+  }
+
+  .each-slide-child .Slidetitle {
+    font-size: 100px;
+  }
+  .each-slide-child .Slidedetails {
+    font-size: 20px;
+    width: 70%;
+  }
+
+  .aboutContent {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .pane {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
