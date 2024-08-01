@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import Header from "../components/header";
 class Home extends Component {
-  handlemessage = (var1, var2) => {
-    alert("Hello, World!");
+  handleNotimessage = (var1, var2) => {
     window.ReactNativeWebView.postMessage(
       JSON.stringify({
         title: var1,
@@ -12,15 +11,33 @@ class Home extends Component {
       })
     );
   };
+  handleToastmessage = (var1, var2) => {
+    window.ReactNativeWebView.postMessage(
+      JSON.stringify({
+        title: var1,
+        content: var2,
+        notiType: "toast_notification",
+        type: "success",
+      })
+    );
+  };
   render() {
     return (
       <div>
         <Header />
-        <div>
+        <div className="container">
           <button
             className="btn btn-primary "
             onClick={() => {
-              this.handlemessage("test", "testing");
+              this.handleNotimessage("test", "testing");
+            }}
+          >
+            Notification
+          </button>
+          <button
+            className="btn btn-success "
+            onClick={() => {
+              this.handleToastmessage("test", "testing");
             }}
           >
             Notification
