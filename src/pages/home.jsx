@@ -1,5 +1,10 @@
+/* eslint-disable no-undef */
 import React, { Component } from "react";
 import Header from "../components/header";
+
+// Example global variable, you might need to define it in your environment or configuration
+const NOTI_URL = window.NOTI_URL || ""; // Or another method of accessing the URL
+
 class Home extends Component {
   handleNotimessage = (var1, var2) => {
     window.ReactNativeWebView.postMessage(
@@ -11,6 +16,7 @@ class Home extends Component {
       })
     );
   };
+
   handleToastmessage = (var1, var2) => {
     window.ReactNativeWebView.postMessage(
       JSON.stringify({
@@ -21,13 +27,20 @@ class Home extends Component {
       })
     );
   };
+
   render() {
+    let nofiicationUrl = "";
+
+    if (NOTI_URL) {
+      nofiicationUrl = NOTI_URL;
+    }
+
     return (
       <div>
         <Header />
         <div className="container">
           <button
-            className="btn btn-primary "
+            className="btn btn-primary"
             onClick={() => {
               this.handleNotimessage("test", "testing");
             }}
@@ -35,13 +48,16 @@ class Home extends Component {
             Notification
           </button>
           <button
-            className="btn btn-success "
+            className="btn btn-success"
             onClick={() => {
               this.handleToastmessage("test", "testing");
             }}
           >
             Notification
           </button>
+
+          <br></br>
+          <b>{nofiicationUrl || "No URL provided"}</b>
         </div>
       </div>
     );
