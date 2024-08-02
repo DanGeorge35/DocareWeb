@@ -1,11 +1,30 @@
-$primaryColor: #0c4ea4;
-$secondaryColor: #2ecc71;
+$primaryColor: #0d6efd;
+$secondaryColor: #2147e0;
+$lightColor: #2ab7eba1;
 $backgroundColor: #ecf0f1;
-$textColor: #2c3e50;
+$textColor: #1b3d5e;
 $navHeight: 80px;
 
-@import url("https://fonts.googleapis.com/css2?family=Sacramento&family=Quicksand:wght@300;400;600;700&family=Libre+Baskerville:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,700;1,700&family=Dancing+Script:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sacramento&display=swap');
 
+
+// ================================================================================================================CUSTOMS
+html,body,h1,h2,h3,h4,h5,h6,b,span,div,input,p {
+  font-family: "Poppins", sans-serif;
+}
+.screen {
+  height: 100vh;
+  padding: 0px 15px
+}
+.bg-light-color{
+  background-color: $lightColor;
+}
+.btn-primary {
+background-color: $primaryColor;
+  border:none;
+}
+
+// ================================================================================================================= CUSTOMS
 .loader {
   position: fixed;
   left: 0px;
@@ -31,7 +50,6 @@ $navHeight: 80px;
   background-color: white;
 }
 
-
 .Nav .navbar .navbar-body{
   height: $navHeight;
   width: 100vw;
@@ -47,6 +65,8 @@ select option {
   color: #333;
 }
 
+
+
 .btn {
   padding: 12px;
 }
@@ -54,23 +74,7 @@ select option {
   border-color: hsla(39, 100%, 68%, 1);
   box-shadow: 0 0 0 0.25rem rgb(223 156 31 / 25%);
 }
-.fontFam0 {
-  font-family: "Dancing Script", cursive;
-}
 
-.fontFam1 {
-  font-family: "Quicksand";
-}
-
-.fontFam2 {
-  font-family: "Nanum Myeongjo", serif;
-}
-.fontFam3 {
-  font-family: "Cormorant Garamond", serif;
-}
-.fontFam4 {
-  font-family: "Libre Baskerville", sans-serif;
-}
 
 .SideContent > div::after {
   content: "";
@@ -261,10 +265,6 @@ select option {
   border-top: 10px solid black;
 }
 
-
-
-
-
 .about-page {
   background-repeat: no-repeat;
   background-size: cover;
@@ -274,4 +274,112 @@ select option {
   height: 450px;
   color: white;
   background-color: rgba(46, 44, 4, 0.656);
+}
+
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
 }
