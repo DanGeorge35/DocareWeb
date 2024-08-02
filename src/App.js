@@ -2,8 +2,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/home";
 import NoPage from "./pages/404";
-import About from "./pages/about";
-import LanguageSelection from "./pages/langSelect";
+import Authguard from "./components/authguard";
+import Dashboard from "./pages/dashboard";
 
 function App() {
   return (
@@ -13,8 +13,10 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/language" element={<LanguageSelection />} />
-          <Route path="/About" element={<About />} />
+          <Route
+            path="/dashboard"
+            element={<Authguard element={<Dashboard />} />}
+          />
           <Route path="*" element={<NoPage />} />
         </Routes>
       </Router>
