@@ -2,19 +2,22 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/home";
 import NoPage from "./pages/404";
-import About from "./pages/about";
+import Authguard from "./components/authguard";
+import Dashboard from "./pages/dashboard";
 
 function App() {
-  let BASEURL = "https://cadencepub.com/production/";
   return (
-    <div className="container p-0">
+    <div className="">
       <Router>
         <Routes>
-          <Route index element={<Home BASEURL={BASEURL} />} />
-          <Route path="/" element={<Home BASEURL={BASEURL} />} />
-          <Route path="/home" element={<Home BASEURL={BASEURL} />} />
-          <Route path="/About" element={<About BASEURL={BASEURL} />} />
-          <Route path="*" element={<NoPage BASEURL={BASEURL} />} />
+          <Route index element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route
+            path="/dashboard"
+            element={<Authguard element={<Dashboard />} />}
+          />
+          <Route path="*" element={<NoPage />} />
         </Routes>
       </Router>
     </div>
