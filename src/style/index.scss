@@ -1,5 +1,5 @@
-$primaryColor: #0d6efd;
-$secondaryColor: #2147e0;
+$primaryColor: #0064e0;
+$secondaryColor: #499eff;
 $lightColor: #2ab7eba1;
 $backgroundColor: #ecf0f1;
 $textColor: #1b3d5e;
@@ -18,6 +18,9 @@ html,body,h1,h2,h3,h4,h5,h6,b,span,div,input,p {
 }
 .bg-light-color{
   background-color: $lightColor;
+}
+.text-primary{
+  color: $secondaryColor !important;
 }
 .btn-primary {
 background-color: $primaryColor;
@@ -55,10 +58,6 @@ background-color: $primaryColor;
   width: 100vw;
 }
 
-.form-control:focus {
-  border-color: #fbca0e;
-  background-color: #fefefe00;
-}
 
 select option {
   background-color: #fff !important;
@@ -70,9 +69,22 @@ select option {
 .btn {
   padding: 12px;
 }
+
+.form-control {
+  background-color: #fff;
+  padding: 12px;
+}
+
+
 .form-control:focus {
-  border-color: hsla(39, 100%, 68%, 1);
-  box-shadow: 0 0 0 0.25rem rgb(223 156 31 / 25%);
+  border-color: $lightColor;
+  background-color: #fff;
+  padding: 12px;
+}
+
+.form-control:focus {
+  border-color: $lightColor;
+  box-shadow: 0 0 0 0.25rem $lightColor;
 }
 
 

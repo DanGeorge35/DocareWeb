@@ -1,7 +1,11 @@
 import React from "react";
 import { Translate } from "@mui/icons-material";
 
-const LanguageSelection = () => {
+const LanguageSelection = ({ onLanguageSelect }) => {
+  const handleButtonClick = (language) => {
+    onLanguageSelect(language);
+  };
+
   return (
     <div className="screen bg-light-color w3-display-container">
       <div className="w3-display-middle w-100 container">
@@ -18,24 +22,28 @@ const LanguageSelection = () => {
               <button
                 className="btn btn-primary w3-block mb-3 w3-round-large"
                 type="button"
+                onClick={() => handleButtonClick("English")}
               >
                 English
               </button>
               <button
                 className="btn btn-primary w3-block mb-3 w3-round-large"
                 type="button"
+                onClick={() => handleButtonClick("Hausa")}
               >
                 Hausa
               </button>
               <button
                 className="btn btn-primary w3-block mb-3 w3-round-large"
                 type="button"
+                onClick={() => handleButtonClick("Igbo")}
               >
                 Igbo
               </button>
               <button
                 className="btn btn-primary w3-block mb-3 w3-round-large"
                 type="button"
+                onClick={() => handleButtonClick("Yoruba")}
               >
                 Yoruba
               </button>
