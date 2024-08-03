@@ -5,6 +5,10 @@ import NoPage from "./pages/404";
 import Authguard from "./components/authguard";
 import Dashboard from "./pages/dashboard";
 
+// APP SETTINGS =================================================== ===================================================
+localStorage.removeItem("languageSelected");
+// APP SETTING =================================================== ===================================================
+
 function App() {
   return (
     <div className="">
