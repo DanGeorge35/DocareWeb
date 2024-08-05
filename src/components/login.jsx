@@ -17,12 +17,12 @@ const Login = () => {
             <div className="text-center p-3">
               <input
                 type="email"
-                className="form-control  mt-3"
+                className="form-control  mt-3 p-3 text-medium"
                 placeholder="Email"
               />
               <input
                 type="password"
-                className="form-control  mt-3 "
+                className="form-control  mt-3 p-3 text-medium "
                 placeholder="Password"
               />
 
