@@ -14,29 +14,45 @@ const Login = () => {
               Login to your account
             </b>
 
-            <div className="text-center p-3">
-              <input
-                type="email"
-                className="form-control  mt-3 p-3 text-medium"
-                placeholder="Email"
-              />
-              <input
-                type="password"
-                className="form-control  mt-3 p-3 text-medium "
-                placeholder="Password"
-              />
+            <div className="card border-2 rounded-3 ">
 
-              <button
-                className="btn btn-primary w3-block mt-4 mb-3 w3-round-large"
-                type="button"
-              >
-                Login
-              </button>
+                <div className="text-center p-3">
+
+                  <input
+                    type="email"
+                    className="form-control  mt-3 p-3 text-medium"
+                    placeholder="Email"
+                  />
+
+                  <input
+                    type="password"
+                    className="form-control  mt-3 p-3 text-medium "
+                    placeholder="Password"
+                  />
+
+                  <div className="float-end">
+                      <a href="/forgetpassword" className="fw-bold mt-3 header pb-5 w3-block ">
+                        Forget Password?
+                      </a>
+                  </div>
+             
+
+                  <button className="btn btn-primary w3-block mt-4 mb-3 w3-round-large"
+                    type="button" >
+                    Login
+                  </button>
+
+                </div>
+
+                <label className="text-center header pb-2 w3-block mb-5">
+                  Don't have an Account? <a href="/createaccount" className="fw-bold" >Create now </a>
+                </label>
+
             </div>
-            <label className="text-center header pb-5 w3-block mb-5">
-              Select Your Language
-            </label>
+
           </div>
+         
+          <img src="assets/doctorsteam.png" alt="teams" style={{postion:"absolute"}}/>
         </div>
       </div>
     </div>
