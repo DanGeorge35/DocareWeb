@@ -395,3 +395,18 @@ select option {
   font-weight: 900;
   font-style: italic;
 }
+
+.login_bg{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../../public/login_bg.jpg);
+}
+.login_bg::before{
+  content: "";
+position: fixed;
+top: 0;
+bottom: 0;
+right: 0;
+left: 0;
+background-color: #1183f2d1;
+}
