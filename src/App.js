@@ -24,7 +24,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/forgetpassword" element={<ForgetPassword />} />
+
           <Route path="/createaccount" element={<CreateAccount />} />
           <Route path="/createaccount_doc" element={<CreateAccount_Doc />} />
           <Route path="/verify" element={<Verify_code />} />

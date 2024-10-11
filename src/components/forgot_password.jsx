@@ -26,6 +26,9 @@ const ForgotPassword = () => {
                 className="form-control  mt-3  text-medium"
                 placeholder="Enter your Address"
               />
+              <p className="fs-6 mt-4" style={{ fontSize: "20px" }}>
+                You will receive an email of your verification code
+              </p>
 
               <button
                 className="btn btn-primary w3-block p-3 mt-4 mb-3 w3-round-large"

@@ -54,10 +54,7 @@ const Login = () => {
                 Sign Up
               </b>
             </div>
-
           </div>
-         
-          <img src="assets/doctorsteam.png" alt="teams" style={{postion:"absolute"}}/>
         </div>
       </div>
     </div>
