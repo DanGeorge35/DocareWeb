@@ -4,8 +4,13 @@ import Home from "./pages/home";
 import NoPage from "./pages/404";
 import Authguard from "./components/authguard";
 import Dashboard from "./pages/dashboard";
+
 import SignUp from "./components/sign-up";
 import ForgotPassword from "./components/forgot_password";
+
+import CreateAccount from "./pages/createAccount";
+import CreateAccount_Doc from "./pages/doctors/createAccount_doc";
+import Verify_code from "./pages/doctors/verify_code";
 
 // APP SETTINGS =================================================== ===================================================
 localStorage.removeItem("languageSelected");
@@ -19,6 +24,10 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/forgetpassword" element={<ForgetPassword />} />
+          <Route path="/createaccount" element={<CreateAccount />} />
+          <Route path="/createaccount_doc" element={<CreateAccount_Doc />} />
+          <Route path="/verify" element={<Verify_code />} />
           <Route
             path="/dashboard"
             element={<Authguard element={<Dashboard />} />}

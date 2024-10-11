@@ -16,7 +16,6 @@ const Login = () => {
             <b className="text-center text-white mb-4 pt-5 pb-4 w3-block h5 bold">
               Login to your account
             </b>
-
             <div className="text-center p-3">
               <div className="px-1 pb-3 w3-block">
                 <label className="w3-left">Email Address</label>
@@ -55,7 +54,10 @@ const Login = () => {
                 Sign Up
               </b>
             </div>
+
           </div>
+         
+          <img src="assets/doctorsteam.png" alt="teams" style={{postion:"absolute"}}/>
         </div>
       </div>
     </div>
