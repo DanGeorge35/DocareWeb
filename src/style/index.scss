@@ -12,6 +12,7 @@ $navHeight: 80px;
 html,body,h1,h2,h3,h4,h5,h6,b,span,div,input,p {
   font-family: "Poppins", sans-serif;
 }
+
 .screen {
   height: 100vh;
   padding: 0px 15px
@@ -72,20 +73,26 @@ select option {
 
 .form-control {
   background-color: #fff;
-  padding: 12px;
+    padding: 13px 25px;
 }
 
-
+.navigator{
+  cursor: pointer;
+}
+.navigator:hover{
+  color: rgb(255, 255, 255);
+}
 .form-control:focus {
   border-color: $lightColor;
   background-color: #fff;
-  padding: 12px;
+  padding: 14px;
 }
 
 .form-control:focus {
   border-color: $lightColor;
   box-shadow: 0 0 0 0.25rem $lightColor;
 }
+
 
 
 .SideContent > div::after {
@@ -394,4 +401,19 @@ select option {
   font-family: "Poppins", sans-serif;
   font-weight: 900;
   font-style: italic;
+}
+
+.login_bg{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../../public/login_bg.jpg);
+}
+.login_bg::before{
+  content: "";
+position: fixed;
+top: 0;
+bottom: 0;
+right: 0;
+left: 0;
+background-color: #1183f2d1;
 }

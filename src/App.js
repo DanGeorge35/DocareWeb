@@ -4,7 +4,10 @@ import Home from "./pages/home";
 import NoPage from "./pages/404";
 import Authguard from "./components/authguard";
 import Dashboard from "./pages/dashboard";
-import ForgetPassword from "./pages/forgetPassword";
+
+import SignUp from "./components/sign-up";
+import ForgotPassword from "./components/forgot_password";
+
 import CreateAccount from "./pages/createAccount";
 import CreateAccount_Doc from "./pages/doctors/createAccount_doc";
 import Verify_code from "./pages/doctors/verify_code";
@@ -29,6 +32,9 @@ function App() {
             path="/dashboard"
             element={<Authguard element={<Dashboard />} />}
           />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/forgetpass" element={<ForgotPassword />} />
+
           <Route path="*" element={<NoPage />} />
         </Routes>
       </Router>
