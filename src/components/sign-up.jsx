@@ -18,7 +18,7 @@ const SignUp = () => {
 
             <div className="text-center p-3">
               <div className="px-1 pb-3 w3-block">
-                <label className="w3-left">Firstname</label>
+                <b className="w3-left text-light">Firstname</b>
               </div>
               <input
                 type="text"
@@ -26,7 +26,7 @@ const SignUp = () => {
                 placeholder="Enter your Firstname"
               />
               <div className="px-1 pb-3 mt-3 w3-block">
-                <label className="w3-left">Lastname</label>
+                <b className="w3-left text-light">Lastname</b>
               </div>
               <input
                 type="text"
@@ -34,7 +34,7 @@ const SignUp = () => {
                 placeholder="Enter your Lastname"
               />
               <div className="px-1 pb-3 w3-block  mt-3 ">
-                <label className="w3-left">Email Address</label>
+                <b className="w3-left text-light">Email Address</b>
               </div>
               <input
                 type="email"
@@ -52,7 +52,7 @@ const SignUp = () => {
 
             <div className=" w3-block text-center ">
               Already have an account?
-              <b className="navigator" onClick={() => navigate("/")}>
+              <b className="navigator px-2" onClick={() => navigate("/")}>
                 Login Here
               </b>
             </div>

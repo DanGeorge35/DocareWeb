@@ -19,15 +19,15 @@ const ForgotPassword = () => {
 
             <div className="text-center p-3">
               <div className="px-1 pb-3 w3-block">
-                <label className="w3-left">Email Address</label>
+                <b className="w3-left text-light">Email Address</b>
               </div>
               <input
                 type="email"
                 className="form-control  mt-3  text-medium"
                 placeholder="Enter your Address"
               />
-              <p className="fs-6 mt-4" style={{ fontSize: "20px" }}>
-                You will receive an email of your verification code
+              <p className="fs-6 mt-4 text-light" style={{ fontSize: "20px" }}>
+                You will receive an email of your confirmation code
               </p>
 
               <button
