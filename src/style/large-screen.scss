@@ -27,4 +27,31 @@
     width: 80%;
     margin: 0 auto;
   }
+
+    label, b {
+    font-size: 16px;
+  }
+  .form-control{
+    font-size: 16px;
+    padding: 15px 25px;
+  }
+  .btn{
+    padding:17px;
+    font-size: 16px;
+  }
+  .form-title {
+    color:white;
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .navigator-footer{
+    font-size: 16px;
+  }
+  .form-top-logo{
+    height: 70px;
+  }
+  .bg-image_logo{
+    height: 600px;
+  }
 }

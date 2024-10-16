@@ -1,6 +1,6 @@
 
 /* Medium screens (e.g., tablets) */
-@media (min-width: 480px) and (max-width: 779px) {
+@media (min-width: 620px) and (max-width:  1093px) {
   .each-slide2 > div {
     height: 30vh;
   }
@@ -43,5 +43,32 @@
     padding-right: 0px;
     padding-bottom: 40px;
     padding-top: 30px;
+  }
+
+    label, b {
+    font-size: 16px;
+  }
+  .form-control{
+    font-size: 16px;
+    padding: 15px 25px;
+  }
+  .btn{
+    padding:17px;
+    font-size: 16px;
+  }
+  .form-title {
+    color:white;
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .navigator-footer{
+    font-size: 16px;
+  }
+  .form-top-logo{
+    height: 70px;
+  }
+  .bg-image_logo{
+    height: 600px;
   }
 }

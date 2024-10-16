@@ -1,5 +1,5 @@
 /* Small screens (e.g., mobile phones) */
-@media (max-width: 480px) {
+@media (max-width: 620px) {
   .react-slideshow-container .nav {
     display: none;
   }
@@ -45,5 +45,28 @@
 
   .each-slide2 > div {
     height: 30vh;
+  }
+  label, b {
+    font-size: 12px;
+  }
+  .form-control{
+    font-size: 12px;
+    padding: 11px 25px;
+  }
+  .btn{
+    padding:12px;
+    font-size: 12px;
+  }
+  .form-title {
+    color:white;
+    font-size: 17px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .navigator-footer{
+    font-size: 13px;
+  }
+  .form-top-logo{
+    height: 60px;
   }
 }
