@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { login } from "../services/auth";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -9,22 +10,39 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [loading, setLoading] = useState(false);
 
   // Function to handle login
   const handleLogin = async () => {
+    // Basic validation for email and password
+    if (!email || !password) {
+      setError("Please enter both email and password.");
+      return;
+    }
+
     try {
-      const response = await axios.post("YOUR_SERVER_URL/api/login", {
+      const response = await login({
         email,
         password,
       });
+      console.log(response);
+      setLoading(true);
 
       // If login is successful, redirect the user
-      if (response.status === 200) {
-        navigate("/dashboard"); // Change the route to your dashboard or home page
+      if (response.success === true) {
+        setSuccess(response.message);
+        setError("");
+        navigate("/dashboard"); // Redirect to dashboard or home page
+      } else {
+        setError(response.message);
+        setSuccess("");
       }
     } catch (err) {
       // Handle errors
-      setError("Invalid email or password. Please try again.");
+      setError("Internet / Server Error");
+    } finally {
+      setLoading(false); // Stop loading after the request is done
     }
   };
 
@@ -50,6 +68,9 @@ const Login = () => {
                 <b className="form-title">Login to your account</b>
                 <div className="text-center p-3">
                   {error && <div className="alert alert-danger">{error}</div>}{" "}
+                  {success && (
+                    <div className="alert alert-success">{success}</div>
+                  )}{" "}
                   {/* Error message */}
                   <div className="px-1 pb-3 w3-block">
                     <b className="w3-left text-light">Email Address</b>
@@ -84,7 +105,7 @@ const Login = () => {
                     type="button"
                     onClick={handleLogin} // Call handleLogin on button click
                   >
-                    LOGIN
+                    {loading ? "Sending..." : "LOGIN"}
                   </button>
                 </div>
 

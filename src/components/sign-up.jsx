@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { signUp } from "../services/auth"; // Import signUp service
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -11,25 +11,42 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [loading, setLoading] = useState(false); // To manage loading state
 
   // Function to handle sign up
   const handleSignUp = async () => {
+    // Basic validation
+    if (!firstname || !lastname || !email) {
+      setError("All fields are required.");
+      return;
+    }
+
+    setLoading(true); // Set loading to true when starting the request
     try {
-      const response = await axios.post("YOUR_SERVER_URL/api/signup", {
-        firstname,
-        lastname,
-        email,
-      });
+      const response = await signUp({
+        FirstName: firstname,
+        LastName: lastname,
+        Email: email,
+      }); // Use signUp service
 
       // If the request is successful
-      if (response.status === 200) {
-        setSuccess("Account created successfully. Please check your email.");
+      if (response.success === true) {
+        setSuccess("Successfully. Please check your email.");
         setError("");
+      } else {
+        if (response.code === 202) {
+          setError(response.message || "Verify your account.");
+        } else {
+          setError(response.message || "Unable to create account.");
+        }
+        setSuccess("");
       }
     } catch (err) {
       // Handle errors
       setError("Unable to create account. Please try again.");
       setSuccess("");
+    } finally {
+      setLoading(false); // Stop loading after the request is done
     }
   };
 
@@ -95,8 +112,9 @@ const SignUp = () => {
                     className="btn btn-primary w3-block mt-5 mb-3 w3-round-large"
                     type="button"
                     onClick={handleSignUp} // Call handleSignUp on button click
+                    disabled={loading} // Disable button while loading
                   >
-                    SIGN UP
+                    {loading ? "Sending..." : "SIGN UP"}
                   </button>
                 </div>
 
