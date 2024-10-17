@@ -45,13 +45,29 @@
     margin-bottom: 20px;
     display: block;
   }
+  .text-tiny{
+  font-size: 14px;
+}
+.text-small{
+  font-size: 20px;
+}
+.text-medium{
+  font-size: 25px;
+}
+.text-large{
+  font-size: 30px;
+}
+
   .navigator-footer{
-    font-size: 16px;
+    font-size: 19px;
   }
   .form-top-logo{
     height: 70px;
   }
   .bg-image_logo{
     height: 600px;
+  }
+    .alert{
+    font-size: 15px
   }
 }
