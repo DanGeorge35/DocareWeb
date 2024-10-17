@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { resetPassword } from "../services/auth"; // Import resetPassword service
+import { verifyAccount } from "../services/auth"; // Import resetPassword service
 
-const SetPassword = () => {
+const VerifyAccount = () => {
   const navigate = useNavigate();
 
   // State for password input
@@ -41,21 +41,23 @@ const SetPassword = () => {
     }
   };
 
-  const handleReset = async () => {
+  const handleVerify = async () => {
     // if (!password) {
     //   setError("Please enter your password.");
     //   return;
     // }
 
     try {
+      const user = JSON.parse(localStorage.getItem("user"));
+
       setLoading(true); // Set loading to true when starting the request
       const OtpValues = [...otp].join("");
 
-      alert([otp].values());
-      const response = await resetPassword({
-        otp: `${OtpValues}`,
-      }); // Use resetPassword service
-
+      const response = await verifyAccount({
+        token: `${OtpValues}`,
+        email: user.Email,
+      }); // Use verifyAccount service
+      console.log(response);
       // If the request is successful
       if (response.success === true) {
         setSuccess(response.message);
@@ -84,7 +86,7 @@ const SetPassword = () => {
             <div className="row">
               <div className="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
                 <div className="text-white ">
-                  <b className="text-medium"> Welcome, Dan George</b>
+                  <b className="text-large"> Welcome to Docare</b>
                 </div>
                 <div className="text-black mt-5">
                   <b className="text-small">
@@ -93,10 +95,16 @@ const SetPassword = () => {
                   </b>
                 </div>
                 <div className="text-center px-4 mt-2">
-                  {error && <div className="alert alert-danger">{error}</div>}{" "}
+                  {error && (
+                    <div key="err" className="alert alert-danger">
+                      {error}
+                    </div>
+                  )}{" "}
                   {/* Error message */}
                   {success && (
-                    <div className="alert alert-success">{success}</div>
+                    <div className="alert alert-success" key="succ">
+                      {success}
+                    </div>
                   )}{" "}
                   {/* Success message */}
                   <div className="row">
@@ -123,19 +131,22 @@ const SetPassword = () => {
                     ))}
                     <div className="col-12 potp">
                       <button
-                        className="btn btn-primary w3-block mt-4 mb-3 w3-round-large"
+                        className="btn btn-primary text-small w3-block mt-4 mb-3 w3-round-large"
                         type="button"
-                        onClick={handleReset} // Call handleReset on button click
+                        onClick={handleVerify} // Call handleVerify on button click
                         disabled={loading} // Disable button while loading
                       >
-                        {loading ? "Sending..." : "RESET"}
+                        {loading ? "Sending..." : "VERIFY"}
                       </button>
                     </div>
                   </div>
                 </div>
 
-                <div className="w3-block text-center navigator-footer">
-                  <b className="navigator" onClick={() => navigate("/")}>
+                <div className="w3-block text-center navigator-footer mt-3">
+                  <b
+                    className="navigator text-small"
+                    onClick={() => navigate("/")}
+                  >
                     Go back to Login
                   </b>
                 </div>
@@ -148,4 +159,4 @@ const SetPassword = () => {
   );
 };
 
-export default SetPassword;
+export default VerifyAccount;

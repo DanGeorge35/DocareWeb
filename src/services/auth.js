@@ -11,6 +11,16 @@ export const login = async (credentials) => {
   }
 };
 
+export const verifyAccount = async (credentials) => {
+  try {
+    const response = await server().post(ENDPOINTS.LOGIN, credentials);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
+
 export const resetPassword = async (payload) => {
   try {
     const response = await server().post(ENDPOINTS.RESETPASSWORD, payload);

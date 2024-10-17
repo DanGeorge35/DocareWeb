@@ -22,12 +22,14 @@ const Login = () => {
     }
 
     try {
-      const response = await login({
+      const payload = {
         email,
         password,
-      });
+      };
+      const response = await login(payload);
       console.log(response);
       setLoading(true);
+      localStorage.setItem("user", JSON.stringify(payload));
 
       // If login is successful, redirect the user
       if (response.success === true) {

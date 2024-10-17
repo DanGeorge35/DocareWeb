@@ -23,19 +23,23 @@ const SignUp = () => {
 
     setLoading(true); // Set loading to true when starting the request
     try {
-      const response = await signUp({
+      const payload = {
         FirstName: firstname,
         LastName: lastname,
         Email: email,
-      }); // Use signUp service
-
+      };
+      const response = await signUp(payload); // Use signUp service
+      localStorage.setItem("loggedIn", false);
       // If the request is successful
       if (response.success === true) {
+        localStorage.setItem("user", JSON.stringify(payload));
         setSuccess("Successfully. Please check your email.");
         setError("");
       } else {
         if (response.code === 202) {
+          localStorage.setItem("user", JSON.stringify(payload));
           setError(response.message || "Verify your account.");
+          navigate("/verify");
         } else {
           setError(response.message || "Unable to create account.");
         }
