@@ -13,7 +13,7 @@ export const login = async (credentials) => {
 
 export const verifyAccount = async (credentials) => {
   try {
-    const response = await server().post(ENDPOINTS.LOGIN, credentials);
+    const response = await server().post(ENDPOINTS.VERIFY, credentials);
     return response.data;
   } catch (error) {
     console.log(error);
