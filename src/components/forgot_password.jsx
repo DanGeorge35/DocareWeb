@@ -43,8 +43,8 @@ const ForgotPassword = () => {
   return (
     <div className="bg-info container0">
       <div className="row">
-        <div className="col-xl-6 p-0 d-none d-lg-block">
-          <div className="medical_banner"></div>
+        <div className="col-xl-6 p-0 d-none d-lg-none d-xl-block medical_banner">
+          <div className=" medical_cover"></div>
         </div>
         <div className="col-xl-6 text-center login_bg screen w3-display-container">
           <div className="w3-display-middle w-100 container">
@@ -73,7 +73,7 @@ const ForgotPassword = () => {
                   </div>
                   <input
                     type="email"
-                    className="form-control mt-3 text-medium"
+                    className="form-control mt-3 "
                     placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)} // Update email state

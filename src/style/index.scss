@@ -453,8 +453,35 @@ select option {
     transform: rotate(360deg);
   }
 }
+.potp{
+  padding: 5px !important;
+}
+.otp{
+  width: 100% !important;
+  height: 65px !important;
+  font-weight: 800 !important;
+  font-size: 40px !important;
+  padding: 0px  !important;
 
+  display: inline-block !important;
+}
 
+.text-tiny{
+  font-size: 12px;
+}
+.text-small{
+  font-size: 14px;
+}
+.text-medium{
+  font-size: 16px;
+}
+.text-large{
+  font-size: 20px;
+}
+
+.welcome_msg{
+  font-size: 20px;
+}
 .container0{
     width: 100%;
     padding-right: 12px;
@@ -462,10 +489,14 @@ select option {
 
 }
 
+.medical_cover{
+  background-color:rgba(10, 8, 32, 0.6);
+  height: 100vh;
+}
 .medical_banner{
   background-image: url(../../public/medical-banner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+
 }
