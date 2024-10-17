@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { resetPassword } from "../services/auth"; // Import resetPassword service
 
 const ForgotPassword = () => {
   const navigate = useNavigate();
@@ -9,31 +9,42 @@ const ForgotPassword = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [loading, setLoading] = useState(false); // To manage loading state
 
   // Function to handle password reset
   const handleReset = async () => {
+    // Basic email validation
+    if (!email) {
+      setError("Please enter your email address.");
+      return;
+    }
+
     try {
-      const response = await axios.post("YOUR_SERVER_URL/api/forgot-password", {
-        email,
-      });
+      setLoading(true); // Set loading to true when starting the request
+      const response = await resetPassword({ email }); // Use resetPassword service
 
       // If the request is successful
-      if (response.status === 200) {
-        setSuccess("Password reset link has been sent to your email.");
+      if (response.success === true) {
+        setSuccess(response.message);
         setError("");
+      } else {
+        setError(response.message || "Unable to send password reset email.");
+        setSuccess("");
       }
     } catch (err) {
       // Handle errors
       setError("Unable to send password reset email. Please try again.");
       setSuccess("");
+    } finally {
+      setLoading(false); // Stop loading after the request is done
     }
   };
 
   return (
     <div className="bg-info container0">
       <div className="row">
-        <div className="col-xl-6 p-0 d-none d-lg-block">
-          <div className="medical_banner"></div>
+        <div className="col-xl-6 p-0 d-none d-lg-none d-xl-block medical_banner">
+          <div className=" medical_cover"></div>
         </div>
         <div className="col-xl-6 text-center login_bg screen w3-display-container">
           <div className="w3-display-middle w-100 container">
@@ -62,7 +73,7 @@ const ForgotPassword = () => {
                   </div>
                   <input
                     type="email"
-                    className="form-control mt-3 text-medium"
+                    className="form-control mt-3 "
                     placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)} // Update email state
@@ -71,8 +82,9 @@ const ForgotPassword = () => {
                     className="btn btn-primary w3-block mt-4 mb-3 w3-round-large"
                     type="button"
                     onClick={handleReset} // Call handleReset on button click
+                    disabled={loading} // Disable button while loading
                   >
-                    RESET
+                    {loading ? "Sending..." : "RESET"}
                   </button>
                 </div>
 
