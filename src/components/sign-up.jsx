@@ -35,6 +35,7 @@ const SignUp = () => {
         localStorage.setItem("user", JSON.stringify(payload));
         setSuccess("Successfully. Please check your email.");
         handlleError("");
+        navigate("/verify");
       } else {
         if (response.code === 202) {
           localStorage.setItem("user", JSON.stringify(payload));
