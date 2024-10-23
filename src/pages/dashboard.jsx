@@ -40,7 +40,7 @@ const UserDashboard = () => {
       <div className="w3-display-middle w-100 container text-center">
         <DashboardIcon fontSize="large" />
         <h2>
-          Welcome to {userDetails.FirstName ? userDetails.FirstName : "the"}{" "}
+          Welcome to {userDetails.FirstName} {userDetails.LastName}
           Dashboard
         </h2>
         {loading && <p>Loading...</p>}
