@@ -17,36 +17,45 @@ const Login = () => {
   const handleLogin = async () => {
     // Basic validation for email and password
     if (!email || !password) {
-      setError("Please enter both email and password.");
+      handlleError("Please enter both email and password.");
+
       return;
     }
+    setLoading(true);
 
     try {
       const payload = {
-        email,
-        password,
+        Email: email,
+        Password: password,
       };
       const response = await login(payload);
       console.log(response);
-      setLoading(true);
+
       localStorage.setItem("user", JSON.stringify(payload));
 
       // If login is successful, redirect the user
       if (response.success === true) {
         setSuccess(response.message);
-        setError("");
+        handlleError("");
         navigate("/dashboard"); // Redirect to dashboard or home page
       } else {
-        setError(response.message);
+        handlleError(response.message);
         setSuccess("");
       }
     } catch (err) {
       // Handle errors
-      setError("Internet / Server Error");
+      handlleError("Internet / Server Error");
     } finally {
       setLoading(false); // Stop loading after the request is done
     }
   };
+
+  function handlleError(err) {
+    setError(err);
+    setTimeout(() => {
+      setError("");
+    }, 4000);
+  }
 
   return (
     <div className=" bg-info container0">

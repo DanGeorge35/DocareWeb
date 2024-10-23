@@ -17,7 +17,7 @@ const SignUp = () => {
   const handleSignUp = async () => {
     // Basic validation
     if (!firstname || !lastname || !email) {
-      setError("All fields are required.");
+      handlleError("All fields are required.");
       return;
     }
 
@@ -34,25 +34,32 @@ const SignUp = () => {
       if (response.success === true) {
         localStorage.setItem("user", JSON.stringify(payload));
         setSuccess("Successfully. Please check your email.");
-        setError("");
+        handlleError("");
       } else {
         if (response.code === 202) {
           localStorage.setItem("user", JSON.stringify(payload));
-          setError(response.message || "Verify your account.");
+          handlleError(response.message || "Verify your account.");
           navigate("/verify");
         } else {
-          setError(response.message || "Unable to create account.");
+          handlleError(response.message || "Unable to create account.");
         }
         setSuccess("");
       }
     } catch (err) {
       // Handle errors
-      setError("Unable to create account. Please try again.");
+      handlleError("Unable to create account. Please try again.");
       setSuccess("");
     } finally {
       setLoading(false); // Stop loading after the request is done
     }
   };
+
+  function handlleError(err) {
+    setError(err);
+    setTimeout(() => {
+      setError("");
+    }, 4000);
+  }
 
   return (
     <div className="bg-info container0">

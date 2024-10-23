@@ -43,13 +43,12 @@ const VerifyAccount = () => {
 
   const handleVerify = async () => {
     // if (!password) {
-    //   setError("Please enter your password.");
+    //   handlleError("Please enter your password.");
     //   return;
     // }
 
     try {
       const user = JSON.parse(localStorage.getItem("user"));
-
       setLoading(true); // Set loading to true when starting the request
       const OtpValues = [...otp].join("");
 
@@ -61,19 +60,33 @@ const VerifyAccount = () => {
       // If the request is successful
       if (response.success === true) {
         setSuccess(response.message);
-        setError("");
+        handlleError("");
+        localStorage.setItem("user", JSON.stringify(response.data));
+        setTimeout(() => {
+          localStorage.setItem("loggedIn", "true");
+          navigate("/");
+        }, 3000);
       } else {
-        setError(response.message || "Unable to send password reset password.");
+        handlleError(
+          response.message || "Unable to send password reset password."
+        );
         setSuccess("");
       }
     } catch (err) {
       // Handle errors
-      setError("Unable to send password. Please try again.");
+      handlleError("Unable to send password. Please try again.");
       setSuccess("");
     } finally {
       setLoading(false); // Stop loading after the request is done
     }
   };
+
+  function handlleError(err) {
+    setError(err);
+    setTimeout(() => {
+      setError("");
+    }, 4000);
+  }
 
   return (
     <div className="bg-info container0">
@@ -82,11 +95,11 @@ const VerifyAccount = () => {
           <div className=" medical_cover"></div>
         </div>
         <div className="col-xl-6 text-center login_bg screen w3-display-container">
-          <div className="w3-display-middle w-100 container">
+          <div className="w3-display-middle w-100 container ">
             <div className="row">
               <div className="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
                 <div className="text-white ">
-                  <b className="text-large"> Welcome to Docare</b>
+                  <b className="text-large"> Confirm OTP</b>
                 </div>
                 <div className="text-black mt-5">
                   <b className="text-small">

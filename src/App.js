@@ -4,13 +4,8 @@ import Home from "./pages/home";
 import NoPage from "./pages/404";
 import Authguard from "./components/authguard";
 import Dashboard from "./pages/dashboard";
-
 import SignUp from "./components/sign-up";
 import ForgotPassword from "./components/forgot_password";
-
-import CreateAccount from "./pages/createAccount";
-import CreateAccount_Doc from "./pages/doctors/createAccount_doc";
-import Verify_code from "./pages/doctors/verify_code";
 import VerifyAccount from "./components/verify";
 
 // APP SETTINGS =================================================== ===================================================

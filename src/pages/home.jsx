@@ -2,12 +2,16 @@
 import React, { useState } from "react";
 import LanguageSelection from "../components/langselection";
 import Login from "../components/login";
+import PasswordSetup from "../components/password";
+import UserDashboard from "./dashboard";
 
 const Home = () => {
   const [languageSelected, setLanguageSelected] = useState(
     localStorage.getItem("languageSelected")
   );
-  const [loggedIn, setLoggedIn] = useState(localStorage.getItem("loggedIn"));
+  const [loggedIn, setLoggedIn] = useState(
+    localStorage.getItem("loggedIn") === "true" ? true : false
+  );
 
   const handleLanguageSelect = (language) => {
     localStorage.setItem("languageSelected", language);
@@ -22,8 +26,14 @@ const Home = () => {
     return <Login />;
   }
 
+  const User = JSON.parse(localStorage.getItem("user"));
+  if (User.Status === "Unauth") {
+    return <PasswordSetup />;
+  }
+
+  return <UserDashboard />;
+
   // Add any additional rendering or functionality here if needed
-  return null;
 };
 
 export default Home;
