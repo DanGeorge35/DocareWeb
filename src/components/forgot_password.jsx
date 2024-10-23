@@ -21,12 +21,16 @@ const ForgotPassword = () => {
 
     try {
       setLoading(true); // Set loading to true when starting the request
-      const response = await resetPassword({ email }); // Use resetPassword service
+      const response = await resetPassword({ Email: email }); // Use resetPassword service
 
       // If the request is successful
       if (response.success === true) {
         setSuccess(response.message);
         setError("");
+        localStorage.setItem("user", JSON.stringify({ Email: email }));
+        setSuccess("Successfully. Please check your email.");
+        handlleError("");
+        navigate("/verify");
       } else {
         setError(response.message || "Unable to send password reset email.");
         setSuccess("");
@@ -39,6 +43,13 @@ const ForgotPassword = () => {
       setLoading(false); // Stop loading after the request is done
     }
   };
+
+  function handlleError(err) {
+    setError(err);
+    setTimeout(() => {
+      setError("");
+    }, 4000);
+  }
 
   return (
     <div className="bg-info container0">

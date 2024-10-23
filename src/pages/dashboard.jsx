@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Dashboard as DashboardIcon } from "@mui/icons-material";
+import PasswordSetup from "../components/password";
 
 const UserDashboard = () => {
   const navigate = useNavigate();
@@ -14,15 +15,9 @@ const UserDashboard = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  useEffect(() => {
-    if (User && User.Account) {
-      // Set user details if available
-      setUserDetails(User.Account);
-    } else {
-      setError("User not found");
-    }
-  }, [User]);
-
+  if (User.Account.Status === "Unauth") {
+    return <PasswordSetup />;
+  }
   const handleLogout = () => {
     localStorage.setItem("loggedIn", "false");
     navigate("/login");
