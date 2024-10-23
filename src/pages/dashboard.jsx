@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Dashboard as DashboardIcon } from "@mui/icons-material";
 
 const UserDashboard = () => {
+  const navigate = useNavigate();
   // Safely parse user data from localStorage
   const User = localStorage.getItem("user")
     ? JSON.parse(localStorage.getItem("user"))
@@ -21,8 +23,20 @@ const UserDashboard = () => {
     }
   }, [User]);
 
+  const handleLogout = () => {
+    localStorage.setItem("loggedIn", "fasle");
+    navigate(0);
+  };
+
   return (
     <div className="screen bg-light-color w3-display-container">
+      <span
+        onClick={handleLogout}
+        className="w3-display-topright py-1 px-4 rounded-5 border border-dark m-3 "
+        style={{ cursor: "pointer" }}
+      >
+        Logout
+      </span>
       <div className="w3-display-middle w-100 container text-center">
         <DashboardIcon fontSize="large" />
         <h2>
