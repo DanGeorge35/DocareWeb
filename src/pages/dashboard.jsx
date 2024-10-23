@@ -24,7 +24,7 @@ const UserDashboard = () => {
   }, [User]);
 
   const handleLogout = () => {
-    localStorage.setItem("loggedIn", "fasle");
+    localStorage.setItem("loggedIn", "false");
     navigate("/login");
   };
 
