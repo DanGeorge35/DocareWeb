@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Dashboard as DashboardIcon } from "@mui/icons-material";
 
 const UserDashboard = () => {
-  const User = JSON.parse(localStorage.getItem("user"));
+  // Safely parse user data from localStorage
+  const User = localStorage.getItem("user")
+    ? JSON.parse(localStorage.getItem("user"))
+    : null;
   const token = localStorage.getItem("token");
   const [userDetails, setUserDetails] = useState({});
   const [error, setError] = useState("");
@@ -10,9 +13,9 @@ const UserDashboard = () => {
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
-    if (User) {
-      // You can fetch or set the user details and token details here
-      setUserDetails(User);
+    if (User && User.Account) {
+      // Set user details if available
+      setUserDetails(User.Account);
     } else {
       setError("User not found");
     }
@@ -22,7 +25,10 @@ const UserDashboard = () => {
     <div className="screen bg-light-color w3-display-container">
       <div className="w3-display-middle w-100 container text-center">
         <DashboardIcon fontSize="large" />
-        <h2>Welcome to {User.FirstName} Dashboard</h2>
+        <h2>
+          Welcome to {userDetails.FirstName ? userDetails.FirstName : "the"}{" "}
+          Dashboard
+        </h2>
         {loading && <p>Loading...</p>}
         {error && <p className="text-danger">{error}</p>}
         {success && <p className="text-success">Success message</p>}

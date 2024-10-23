@@ -27,10 +27,10 @@ const PasswordSetup = () => {
       setLoading(true);
 
       const response = await createPassword({
-        Email: User.Email,
+        Email: User.Account.Email,
         Password: password,
         ConfirmPassword: confirmPassword,
-        Token: User.Token,
+        Token: User.Account.Token,
       });
 
       if (response.success) {
@@ -71,7 +71,7 @@ const PasswordSetup = () => {
               <div className="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
                 <div className="text-white">
                   <b className="text-large">
-                    Hello, {User.FirstName} {User.LastName}
+                    Hello, {User.Account.FirstName} {User.Account.LastName}
                   </b>
                 </div>
                 <div className="text-black mt-5">

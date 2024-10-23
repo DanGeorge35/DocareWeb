@@ -27,7 +27,7 @@ const Home = () => {
   }
 
   const User = JSON.parse(localStorage.getItem("user"));
-  if (User.Status === "Unauth") {
+  if (User.Account.Status === "Unauth") {
     return <PasswordSetup />;
   }
 

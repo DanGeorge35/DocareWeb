@@ -31,14 +31,15 @@ const Login = () => {
       const response = await login(payload);
       console.log(response);
 
-      localStorage.setItem("user", JSON.stringify(payload));
-
       // If login is successful, redirect the user
       if (response.success === true) {
         setSuccess(response.message);
         handlleError("");
         navigate("/dashboard"); // Redirect to dashboard or home page
+        localStorage.setItem("user", JSON.stringify(response.data));
+        localStorage.setItem("loggedIn", "true");
       } else {
+        localStorage.setItem("user", JSON.stringify(payload));
         handlleError(response.message);
         setSuccess("");
       }
